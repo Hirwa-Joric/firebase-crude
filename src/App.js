@@ -7,6 +7,11 @@ function App() {
   const [users, setUsers] = useState([])
   const userCollectionRef = collection(db, 'user')
 
+  const createUser = async () => {
+    
+    
+  }
+
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(userCollectionRef)
@@ -18,6 +23,10 @@ function App() {
 
   return (
     <div className="App">
+      
+      <input type="text" placeholder='name' />
+      <input type="number" placeholder='age' />
+      <button>Create User</button>
       {users.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
