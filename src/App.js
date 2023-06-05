@@ -9,7 +9,7 @@ function App() {
 
   const createUser = async () => {
     
-    
+
   }
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
       
       <input type="text" placeholder='name' />
       <input type="number" placeholder='age' />
-      <button>Create User</button>
+      <button onClick={createUser}>Create User</button>
       {users.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
