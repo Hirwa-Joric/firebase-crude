@@ -4,6 +4,9 @@ import { db } from './firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
 function App() {
+  const [newUser, setNewUser] = useState("");
+  const [newAge  , setNewUser] = useState("");
+
   const [users, setUsers] = useState([])
   const userCollectionRef = collection(db, 'user')
 
@@ -24,7 +27,7 @@ function App() {
   return (
     <div className="App">
       
-      <input type="text" placeholder='name' />
+      <input type="text" placeholder='name' onChange={(e)=>{e.target.value}}/>
       <input type="number" placeholder='age' />
       <button onClick={createUser}>Create User</button>
       {users.map((user) => (
